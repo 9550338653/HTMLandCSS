@@ -1,0 +1,130 @@
+#Zoomed_Out_Card
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoomable Card with Hidden Info</title>
+  <style>
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 450px;
+      height: 500px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      background-color: #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      height: 400px;
+      width: 550px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .card .content {
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, opacity 0.3s;
+      height: 50px;
+    }
+
+    .card:hover .content {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+
+    .card .name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: black;
+    }
+
+    .card .description {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: black;
+    }
+
+    .card:hover .hidden-info {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+      height: 100px;
+    }
+
+    .card .hidden-info {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      
+      color: #fff;
+      transition: transform 0.3s, opacity 0.3s;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 0;
+    }
+
+    .card .hidden-info p {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: black;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .card:hover .hidden-info p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card .hidden-info p:nth-child(1) {
+      transition-delay: 0.2s;
+    }
+
+    .card .hidden-info p:nth-child(2) {
+      transition-delay: 0.3s;
+    }
+        
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <img src="https://picsum.photos/300/250">
+    <div class="content">
+      <div class="name">Product Name</div>
+      <div class="description">Product Description</div>
+    </div>
+
+    <div class="hidden-info">
+      <div class="name">Product Name</div>
+      <div class="name">product description</div>
+
+      <p>Additional Information</p>
+    </div>
+  </div>
+</body>
+</html>
+
