@@ -1,0 +1,130 @@
+#BLUR CARD.......
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft Store Collection Card</title>
+  <style>
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 450px;
+      height: 10x;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      background-color: #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    img {
+      height: 500px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .card .content {
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, opacity 0.3s;
+      height: 50px;
+    }
+
+    .card:hover .content {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+
+    .card .name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card:hover .content img {
+      transform: translateY(-50px);
+      filter: blur(5px);
+      transition: all 0.5s ease;
+    }
+
+    .card .description {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .card .hidden-info {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background-color: rgba(90, 83, 179, 0.815);
+      color: #fff;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .card:hover .hidden-info {
+      display: block;
+      transform: translateY(-100%);
+      opacity: 1;
+    }
+
+    .card .hidden-info p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .card:hover img {
+      filter: blur(5px);
+    }
+
+    .card:hover .content {
+      transform: translateY(-50px);
+      opacity: 1;
+    }
+
+    .card:hover .hidden-info {
+      display: block;
+      transform: translateY(0%);
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://picsum.photos/300/250">
+
+    <div class="content">
+      <div class="name">Product Name</div>
+      <div class="description">Product Description</div>
+      <button>playgame</button>
+      <button>watch trailer</button>
+    </div>
+
+    <div class="hidden-info">
+      <p>Additional Information
+        </p>
+    </div>
+</body>
+</html>
